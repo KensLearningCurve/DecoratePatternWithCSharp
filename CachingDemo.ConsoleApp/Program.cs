@@ -4,9 +4,12 @@ using CachingDemo.Business.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
+
 ServiceCollection services = new();
 services.AddMemoryCache();
 services.AddScoped<IMovieService, MovieService>();
+services.Decorate<IMovieService, MovieService_Cache>();
+
 services.AddDbContext<DataContext>(x => x.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DecoratePatternDemo;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
 
 ServiceProvider serviceProvider = services.BuildServiceProvider();
