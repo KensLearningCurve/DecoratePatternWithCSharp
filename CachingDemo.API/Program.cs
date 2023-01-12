@@ -10,9 +10,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddMemoryCache();
 builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.Decorate<IMovieService, MovieService_Cache>();
 
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DecoratePatternDemo;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
-
 
 var app = builder.Build();
 
