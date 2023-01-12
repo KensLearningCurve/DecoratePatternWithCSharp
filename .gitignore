@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/CachingDemo.Business/obj
+/CachingDemo.ConsoleApp/.vs/CachingDemo.ConsoleApp
+/CachingDemo.ConsoleApp/obj
+/CachingDemo.Business/bin/Debug/net6.0
+/CachingDemo.ConsoleApp/bin/Debug/net6.0
+/CachingDemo.ConsoleApp/.vs/ProjectEvaluation
